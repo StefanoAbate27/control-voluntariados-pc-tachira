@@ -1,36 +1,28 @@
 {
-  "name": "talento-humano-pc",
+  "name": "talento-humano-pc-tachira",
   "version": "1.0.0",
-  "description": "Sistema de Talento Humano - Protección Civil Táchira",
-  "author": "Protección Civil Táchira",
+  "description": "Sistema de Control de Voluntariados PC Táchira",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
+    "pack": "electron-builder --dir",
     "dist": "electron-builder"
   },
-  "devDependencies": {
-    "electron": "^30.5.1",
-    "electron-builder": "^24.13.3"
-  },
   "build": {
-    "appId": "org.pc.tachira.talento-humano",
+    "appId": "org.talento.humano.pc.tachira",
     "productName": "Talento Humano PC Táchira",
-    "directories": {
-      "output": "dist"
-    },
-    "files": [
-      "**/*"
-    ],
     "win": {
       "target": "nsis",
-      "icon": "icon.ico",
-      "signingHashAlgorithms": []
+      "icon": "icon.ico"
     },
-    "nsis": {
-      "oneClick": false,
-      "perMachine": true,
-      "allowElevation": true,
-      "allowToChangeInstallationDirectory": true
+    "directories": {
+      "output": "dist"
     }
+  },
+  "dependencies": {
+    "electron": "^28.0.0"
+  },
+  "devDependencies": {
+    "electron-builder": "^24.0.0"
   }
 }

@@ -4,6 +4,7 @@ import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import "./index.css";
 
+
 const estadosConMunicipios = {
  "Amazonas": ["Alto Orinoco", "Atabapo", "Atures", "Autana", "Manapiare", "Maroa", "Río Negro"],
   "Anzoátegui": ["Anaco", "Aragua", "Diego Bautista Urbaneja", "Fernando de Peñalver", "Francisco del Carmen Carvajal", "General Sir Arthur McGregor", "Guanta", "Independencia", "José Gregorio Monagas", "Juan Antonio Sotillo", "Juan Manuel Cajigal", "Libertad", "Manuel Ezequiel Bruzual", "Pedro María Freites", "Píritu", "San José de Guanipa", "San Juan de Capistrano", "Santa Ana", "Simón Bolívar", "Simón Rodríguez"],
@@ -53,7 +54,12 @@ function App() {
     "Talla Camisa", "Talla Pantalón", "Talla Calzado", "Talla Gorra",
     "Estado", "Municipio", "Organización"
   ];
-
+ useEffect(() => {
+    if (window.electronAPI) {
+      window.electronAPI.ping();
+    }
+  }, []);
+  
   useEffect(() => {
     setMunicipiosDisponibles(estadosConMunicipios[estadoSeleccionado] || []);
     setMunicipioSeleccionado("");
