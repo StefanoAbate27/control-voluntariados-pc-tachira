@@ -1,0 +1,36 @@
+{
+  "name": "talento-humano-pc",
+  "version": "1.0.0",
+  "description": "Sistema de Talento Humano - Protección Civil Táchira",
+  "author": "Protección Civil Táchira",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^30.5.1",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "org.pc.tachira.talento-humano",
+    "productName": "Talento Humano PC Táchira",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico",
+      "signingHashAlgorithms": []
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
